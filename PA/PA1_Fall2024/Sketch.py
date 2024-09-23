@@ -348,7 +348,7 @@ class Sketch(CanvasBase):
                 if doTexture:
                     v, u = 0, 0
                     if x_end != x_start:
-                        (x - x_start) / (x_end - x_start)
+                        u = (x - x_start) / (x_end - x_start)
                     if p3.coords[1] != p1.coords[1]:
                         v = (y - p1.coords[1]) / (p3.coords[1] - p1.coords[1])
 
