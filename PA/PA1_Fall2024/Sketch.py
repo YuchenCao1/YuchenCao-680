@@ -346,8 +346,11 @@ class Sketch(CanvasBase):
 
             for x in range(x_start, x_end + 1):
                 if doTexture:
-                    u = (x - x_start) / (x_end - x_start) if x_end != x_start else 0
-                    v = (y - p1.coords[1]) / (p3.coords[1] - p1.coords[1]) if p3.coords[1] != p1.coords[1] else 0
+                    v, u = 0, 0
+                    if x_end != x_start:
+                        (x - x_start) / (x_end - x_start)
+                    if p3.coords[1] != p1.coords[1]:
+                        v = (y - p1.coords[1]) / (p3.coords[1] - p1.coords[1])
 
                     tex_x = int(u * (self.texture.width - 1))
                     tex_y = int(v * (self.texture.height - 1))
