@@ -354,6 +354,8 @@ class Sketch(CanvasBase):
 
                     tex_x = int(u * (self.texture.width - 1))
                     tex_y = int(v * (self.texture.height - 1))
+                    tex_x = min(max(tex_x, 0), self.texture.width - 1)
+                    tex_y = min(max(tex_y, 0), self.texture.height - 1)
 
                     tex_point = self.queryTextureBuffPoint(self.texture, tex_x, tex_y)
                     color = tex_point.color
